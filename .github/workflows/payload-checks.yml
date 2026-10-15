@@ -1,0 +1,13 @@
+name: Payload checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  payload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+      - run: dotnet run --project tests/Payload/PayloadTests.csproj -c Release --artifacts-path ../payload-build

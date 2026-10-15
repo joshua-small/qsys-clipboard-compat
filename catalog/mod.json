@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "id": "clipboard-compat",
+  "name": "Clipboard Compatibility",
+  "description": "Temporary repair for native Copy All from Component / Paste All to Component in the inspected Q-SYS Designer 10.5.0 build. Preserves native commands and custom bindings; requires Mods Core 0.1.5. Validated with two Gains in Emulate. Disable and retire this mod after QSC supplies a verified native fix.",
+  "author": "joshua-small",
+  "helpUrl": "https://github.com/joshua-small/qsys-clipboard-compat",
+  "thumbnail": "catalog/artwork/avitex.ico"
+}
