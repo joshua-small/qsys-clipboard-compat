@@ -31,6 +31,14 @@ dotnet build Designer.Modules.ClipboardCompat.csproj -c Release --artifacts-path
 dotnet run --project tests/Payload/PayloadTests.csproj -c Release --artifacts-path <separate-output>
 ```
 
+The payload test project links the production `Payload.cs` and runs on Linux or
+Windows without Designer, vendor assemblies, Mods Core, or clipboard access.
+It checks exact and exceeded size limits, ordinal names, Unicode round trips,
+duplicate and escaped keys, malformed schemas, and rejected value types.
+Run it from the repository root with the output directory outside the source
+tree. These checks establish codec behavior only; they do not verify native
+clipboard transport, Designer commands, or a vendor fix.
+
 Windows native/Designer tests and their profile-isolated launcher are under `tests/`. The native transport tests replace the clipboard with synthetic values. No test fixture, vendor binary, startup hook or Core runtime is included in this mod's package.
 
 References: [Q-SYS's native copy/paste behavior](https://help.qsys.com/Content/Q-Sys_Designer/Q-Sys_Designer_Shortcuts.htm), [Microsoft's .NET 10 clipboard migration guidance](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/migration/clipboard-dataobject-net10), [package contract](https://github.com/joshua-small/qsys-mod-catalog/blob/main/PACKAGE-CONTRACT.md).
