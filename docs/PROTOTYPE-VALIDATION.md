@@ -1,5 +1,7 @@
 # Clipboard Compatibility prototype
 
+Historical record of the 2026-10-15 prototype milestone. Statements about pending publication or installation describe that milestone. See the [current README](../README.md) and releases for current delivery and installation guidance.
+
 Temporary Copy All from Component / Paste All to Component repair for the inspected Q-SYS Designer 10.5.0 build. The local prototype is implemented and accepted for two Gain components in Emulate. It has not been published, approved in the mod catalog, or installed in the regular Designer application.
 
 The native custom-object clipboard read fails on .NET 10.0.13 in the retained mod-free diagnostic. Microsoft documents the .NET 10 clipboard serialization change and supports explicit string serialization with typed reads: [clipboard migration guidance](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/migration/clipboard-dataobject-net10), [TryGetData](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.clipboard.trygetdata?view=windowsdesktop-10.0). This module transports the native component control data as bounded JSON in a private string clipboard format.
